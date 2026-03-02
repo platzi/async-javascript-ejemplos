@@ -8,7 +8,7 @@ document.addEventListener("click", () => console.log("click 1"));
 setImmediate(() => console.log("immediate 1")); 
 // se ejecuta después de la fase actual del Event Loop
 
-Microtasks
+// Microtasks
 
 Promise.resolve().then(() => console.log("promise 1"));
 Promise.resolve().then(() => console.log("promise 2"));
