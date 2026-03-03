@@ -1,12 +1,12 @@
 const numeros = [1, 2, 3];
 
-// numeros.forEach(function(numero) {
-//   console.log(numero);
-// });
+numeros.forEach(function(numero) {
+  console.log(numero);
+});
 
-// numeros.forEach((numero) => {
-//   console.log(numero);
-// });
+numeros.forEach((numero) => {
+  console.log(numero);
+});
 
 const dobles = numeros.map((numero) => {
   return numero * 2;
