@@ -1,69 +1,64 @@
-// // function salud() {
-// //     return "hola";
-// // }
+function salud() {
+    return "hola";
+}
 
-// // console.log(salud());
+console.log(salud());
 
-// // // async function
+// async function
 
-// // async function saludAsync() {
-// //     return "hola async";
-// // }
+async function saludAsync() {
+    return "hola async";
+}
 
-// // console.log(await saludAsync()); // Promise.resolve(valor);
+console.log(await saludAsync()); // Promise.resolve(valor);
 
-// // ANTES PROMESAS
+// ANTES PROMESAS
 
-// function obtenerUsuario(id) {
-//   return fetch(`https://api.escuelajs.co/api/v1/users/${id}`)
-//     .then(res => {
-//       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-//       return res.json();
-//     });
-// }
+function obtenerUsuario(id) {
+  return fetch(`https://api.escuelajs.co/api/v1/users/${id}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    });
+}
 
-// // AHORA ASYNC/AWAIT
+// AHORA ASYNC/AWAIT
 
-// async function obtenerUsuarioAsync(id) {
-//   const res = await fetch(`https://api.escuelajs.co/api/v1/users/${id}`);
-//   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-//   return res.json();
-// }
+async function obtenerUsuarioAsync(id) {
+  const res = await fetch(`https://api.escuelajs.co/api/v1/users/${id}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
 
-// const usario = await obtenerUsuarioAsync(2);
-// console.log(usario.name);
+const usario = await obtenerUsuarioAsync(2);
+console.log(usario.name);
 
 
-// // mini ejemplo
-// fetch("/api/user")
-//   .then(res => res.json())
-//   .then(data => console.log(data));
+// mini ejemplo
+fetch("/api/user")
+  .then(res => res.json())
+  .then(data => console.log(data));
 
-// // async/await
-// const res = await fetch("/api/user");
-// const data = await res.json();
-// console.log(data);
+// async/await
+const res = await fetch("/api/user");
+const data = await res.json();
+console.log(data);
 
-// // async en distintas formas de función 
+// async en distintas formas de función 
 
-// // Declaración de función
-// async function cargar () {/*codigo*/}
+// Declaración de función
+async function cargar () {/*codigo*/}
 
-// // Expresión de función
-// const cargar = async function() {/*codigo*/}
+// Expresión de función
+const cargar = async function() {/*codigo*/}
 
-// // Arrow function
-// const cargar = async () => {/*codigo*/}
+// Arrow function
+const cargar = async () => {/*codigo*/}
 
-// // Método de objeto
-// const api = {
-//     async obtener() {/*codigo*/}
-// }
-
-// // Método de clase
-// class ServicioUsuarios {
-//     async obtener() {/*codigo*/}
-// }
+// Método de clase
+class ServicioUsuarios {
+    async obtener() {/*codigo*/}
+}
 
 // RETO: usar la siguiente API para obtener datos de usuarios y utilizar las cuatro primeras formas de función
 // fetch https://jsonplaceholder.typicode.com/users/
@@ -94,7 +89,7 @@ const cargar3 = async () => {
 }
 
 // Método de objeto
-const api = {
+const apiObjeto = {
   async obtener() {
     const res = await fetch(URL);
     const data = await res.json();

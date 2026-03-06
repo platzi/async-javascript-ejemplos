@@ -24,26 +24,26 @@ const promesaResuelta = new Promise((resolve, reject) => {
 
 // Consumir valores de una promesa con .then() y a
 
-// function obtenerNombre(data) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       if (data) {
-//         reject(new Error("Algo salió mal"));
-//       } else {
-//         resolve("María");
-//       }
-//     }, 500);
-//   });
-// }
+function obtenerNombre(data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (data) {
+        reject(new Error("Algo salió mal"));
+      } else {
+        resolve("María");
+      }
+    }, 500);
+  });
+}
 
-// // Cambia true por false para ver el otro comportamiento
-// obtenerNombre(false)
-//   .then(nombre => {
-//     console.log("Hola,", nombre);
-//   })
-//   .catch(error => {
-//     console.error("Error:", error.message);
-//   });
+// Cambia true por false para ver el otro comportamiento
+obtenerNombre(false)
+  .then(nombre => {
+    console.log("Hola,", nombre);
+  })
+  .catch(error => {
+    console.error("Error:", error.message);
+  });
 
 
 // Aplicación real, llamando API Colombia

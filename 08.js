@@ -8,46 +8,46 @@ function obtenerUsuario(id) {
     });
 } 
 
-// obtenerUsuario(1)
-//   .then(usuario => {
-//     console.log("usuario", usuario.name);
-//     return usuario;
-//   })
-//   .then(usuario => {
-//     console.log("Id recibido:", usuario.id);
-//     return usuario;
-//   })
-//   .then(usuario => {
-//     console.log("Role:", usuario.role);
-//     return usuario;
-//   })
-//   .then(usuario => {
-//     console.log("Email:", usuario.email);
-//     return usuario;
-//   })
-//   .catch(error => {
-//     console.error("Error al obtener usuario:", error.message);
-//   });
+obtenerUsuario(1)
+  .then(usuario => {
+    console.log("usuario", usuario.name);
+    return usuario;
+  })
+  .then(usuario => {
+    console.log("Id recibido:", usuario.id);
+    return usuario;
+  })
+  .then(usuario => {
+    console.log("Role:", usuario.role);
+    return usuario;
+  })
+  .then(usuario => {
+    console.log("Email:", usuario.email);
+    return usuario;
+  })
+  .catch(error => {
+    console.error("Error al obtener usuario:", error.message);
+  });
 
  
 
-// // ANTES: Callback Hell
-// operacion1(function(res1) {
-//   operacion2(res1, function(res2) {
-//     operacion3(res2, function(res3) {
-//       console.log(res3);
-//     });
-//   });
-// });
+// ANTES: Callback Hell
+operacion1(function(res1) {
+  operacion2(res1, function(res2) {
+    operacion3(res2, function(res3) {
+      console.log(res3);
+    });
+  });
+});
 
 
-// // AHORA: Promise Chaining
-// operacion1()
-//   .then(res1 => operacion2(res1))
-//   .then(res2 => operacion3(res2))
-//   .then(res3 => console.log(res3));
+// AHORA: Promise Chaining
+operacion1()
+  .then(res1 => operacion2(res1))
+  .then(res2 => operacion3(res2))
+  .then(res3 => console.log(res3));
 
-// Retornando promesas dentro de .then()
+//Retornando promesas dentro de .then()
 
 function obtenerPedidos(userId) {
   return new Promise(resolve => {

@@ -1,65 +1,65 @@
-// // Manejo de errores try/catch
-// async function cargarUsuario(id) {
-//   try {
-//     const respuesta = await fetch(`https://api2.escuelajs.co/api/v1/users/${id}`);
-//     const usuario = await respuesta.json();
-//     console.log(usuario.name);
-//   } catch (error) {
-//     console.error("error al cargar usuario",error.message);
-//   } 
-// }
+// Manejo de errores try/catch
+async function cargarUsuario(id) {
+  try {
+    const respuesta = await fetch(`https://api2.escuelajs.co/api/v1/users/${id}`);
+    const usuario = await respuesta.json();
+    console.log(usuario.name);
+  } catch (error) {
+    console.error("error al cargar usuario",error.message);
+  } 
+}
 
-// cargarUsuario(1);
+cargarUsuario(1);
 
-// // Finally, limpieza garantizada
+// Finally, limpieza garantizada
 
-// async function cargarPerfil(userId) {
-//   mostrarSpinner();
+async function cargarPerfil(userId) {
+  mostrarSpinner();
 
-//   try {
-//     const respuesta = await fetch(`https://api.escuelajs.co/api/v1/users/${userId}`);
+  try {
+    const respuesta = await fetch(`https://api.escuelajs.co/api/v1/users/${userId}`);
 
-//     if (!respuesta.ok) {
-//       throw new Error(`HTTP ${respuesta.status}: ${respuesta.statusText}`);
-//     }
+    if (!respuesta.ok) {
+      throw new Error(`HTTP ${respuesta.status}: ${respuesta.statusText}`);
+    }
 
-//     const perfil = await respuesta.json();
-//     renderizarPerfil(perfil);
+    const perfil = await respuesta.json();
+    renderizarPerfil(perfil);
 
-//   } catch (error) {
-//     mostrarError(error.message);
+  } catch (error) {
+    mostrarError(error.message);
 
-//   } finally {
-//     ocultarSpinner(); // Siempre se ejecuta — con o sin error
-//   }
-// }
+  } finally {
+    ocultarSpinner(); // Siempre se ejecuta — con o sin error
+  }
+}
 
 // Errores personalizados
-// async function obtenerProducto(id) {
-//   try {
-//     const respuesta = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
+async function obtenerProducto(id) {
+  try {
+    const respuesta = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
 
-//     // fetch no rechaza con errores HTTP 4xx o 5xx — hay que verificar
-//     if (!respuesta.ok) {
-//       throw new Error(`Producto no encontrado (${respuesta.status})`);
-//     }
+    // fetch no rechaza con errores HTTP 4xx o 5xx — hay que verificar
+    if (!respuesta.ok) {
+      throw new Error(`Producto no encontrado (${respuesta.status})`);
+    }
 
-//     const producto = await respuesta.json();
+    const producto = await respuesta.json();
 
-//     if (!producto || !producto.id) {
-//       throw new Error("Producto inválido o sin datos");
-//     }
+    if (!producto || !producto.id) {
+      throw new Error("Producto inválido o sin datos");
+    }
 
-//     console.log(producto.title);
-//     return producto;
+    console.log(producto.title);
+    return producto;
 
-//   } catch (error) {
-//     console.error(error.message);
-//     return null; // Valor por defecto ante el error
-//   }
-// }
+  } catch (error) {
+    console.error(error.message);
+    return null; // Valor por defecto ante el error
+  }
+}
 
-// obtenerProducto(999);
+obtenerProducto(999);
 
 
 // Múltiples try/catch: cuándo separarlos
@@ -85,8 +85,6 @@ async function procesarPedido(pedidoId) {
 
   return procesarConDatos(usuario, inventario);
 }
-
-
 
 // Con Promesas y .catch()
 function cargarCategorias() {
