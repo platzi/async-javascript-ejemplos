@@ -61,7 +61,6 @@ async function obtenerProducto(id) {
 
 obtenerProducto(999);
 
-
 // Múltiples try/catch: cuándo separarlos
 
 async function procesarPedido(pedidoId) {
